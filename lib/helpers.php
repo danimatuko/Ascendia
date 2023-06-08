@@ -25,14 +25,14 @@ function ascendia_post_meta() {
  * @return void
  */
 function ascendia_read_more_link() {
-    $permalink = get_the_permalink();
-    $title = get_the_title();
-    $titleAttribute = the_title_attribute(['echo' => false]);
+    $permalink = esc_url(get_the_permalink());
+    $title = esc_attr(get_the_title());
+    $titleAttribute = esc_attr($title);
 
     echo
     <<<READ_MORE
-    <a href="$permalink" title="$titleAttribute">
-        Read More <span class="u-screen-reader-text">about $title</span>
-    </a>
+        <a href="$permalink" title="$titleAttribute">
+            Read More <span class="u-screen-reader-text">about $title</span>
+        </a>
     READ_MORE;
 }
