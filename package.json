@@ -1,0 +1,38 @@
+{
+  "name": "ascendia",
+  "version": "1.0.0",
+  "description": "Premium Wordpress theme",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danimatuko/ascendia.git"
+  },
+  "keywords": [
+    "wordpress",
+    "wordpress-theme"
+  ],
+  "author": "Dani Matuko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danimatuko/ascendia/issues"
+  },
+  "homepage": "https://github.com/danimatuko/ascendia#readme",
+  "devDependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/register": "^7.22.5",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.63.3"
+  }
+}
