@@ -10,11 +10,11 @@
 
 <body <?php body_class(); ?>>
 
-    <header>
+    <header class="section">
         <nav>
             <!-- Add your navigation menu here -->
             <!-- <?php wp_nav_menu(array('theme_location' => 'primary-menu')); ?> -->
         </nav>
     </header>
 
-    <main>
+    <main class="section">

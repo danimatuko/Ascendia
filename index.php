@@ -1,29 +1,43 @@
 <?php get_header() ?>
 
-<?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
+<div class="container">
 
-<article <?php post_class(); ?>>
-    <h2 class="is-size-2">
-        <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>">
-            <?php the_title(); ?>
-        </a>
-    </h2>
-    <div>
-        <?php ascendia_post_meta() ?>
+    <div class="columns is-centered">
+        <section class="column <?php echo (is_active_sidebar('primary-sidebar')) ? "is-half" : "is-full"  ?>">
+            <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+
+            <article <?php post_class("card mb-4"); ?>>
+                <div class=" card-content">
+                    <h2 class="is-size-2 card-header-title">
+                        <a href="<?php the_permalink() ?>" title="<?php the_title_attribute() ?>">
+                            <?php the_title(); ?>
+                        </a>
+                    </h2>
+                    <div>
+                        <?php ascendia_post_meta() ?>
+                    </div>
+                    <div class="entry-content">
+                        <?php the_excerpt(); ?>
+                    </div>
+
+                    <?php ascendia_read_more_link() ?>
+                </div>
+            </article>
+
+            <?php endwhile; ?>
+
+            <?php the_posts_pagination() ?>
+
+            <?php else : ?>
+            <p>No posts found.</p>
+            <?php endif; ?>
+        </section>
+        <?php if (is_active_sidebar('primary-sidebar')) : ?>
+        <div>
+            <?php get_sidebar() ?>
+        </div>
+        <?php endif ?>
     </div>
-    <div class="entry-content">
-        <?php the_excerpt(); ?>
-    </div>
-    <?php ascendia_read_more_link() ?>
-</article>
-
-<?php endwhile; ?>
-
-<?php the_posts_pagination() ?>
-
-<?php else : ?>
-<p>No posts found.</p>
-<?php endif; ?>
-
+</div>
 <?php get_footer() ?>
