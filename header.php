@@ -15,7 +15,7 @@
         <div class="hero-head">
             <div class="navbar">
                 <div class="container">
-                    <div class="navbar-brand ">
+                    <div class="navbar-brand">
                         <a href="<?php echo esc_url(home_url("/")) ?>" class="navbar-item">
                             <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
                         </a>
@@ -53,12 +53,15 @@
         <!-- Hero content: will be in the middle -->
         <div class="hero-body">
             <div class="container has-text-centered">
-                <p class="title">
+                <h1 class="title is-size-1">
                     Ascendia
-                </p>
+                </h1>
                 <p class="subtitle">
                     Unleash Your Creativity with Ascendia: A Versatile WordPress Theme for Every Project
                 </p>
+                <div class="is-flex is-justify-content-center">
+                    <?php get_search_form() ?>
+                </div>
             </div>
         </div>
     </header>
