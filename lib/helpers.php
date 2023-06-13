@@ -31,7 +31,7 @@ function ascendia_read_more_link() {
 
     echo
     <<<READ_MORE
-        <a href="$permalink" title="$titleAttribute">
+        <a href="$permalink" title="$titleAttribute" class='card-link'>
             Read More <span class="u-screen-reader-text">about $title</span>
         </a>
     READ_MORE;

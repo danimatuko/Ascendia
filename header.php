@@ -11,59 +11,48 @@
 <body <?php body_class(); ?>>
 
     <header class="hero is-primary is-medium">
-        <!-- Hero head: will stick at the top -->
-        <div class="hero-head">
-            <div class="navbar">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <a href="<?php echo esc_url(home_url("/")) ?>" class="navbar-item">
-                            <img src="https://bulma.io/images/bulma-type-white.png" alt="Logo">
-                        </a>
-                        <span class="navbar-burger" data-target="navbarMenuHeroC">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                Home
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"><?php bloginfo('title') ?></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Dropdown
                             </a>
-                            <a class="navbar-item">
-                                Examples
-                            </a>
-                            <a class="navbar-item">
-                                Documentation
-                            </a>
-                            <span class="navbar-item">
-                                <a class="button is-success is-inverted">
-                                    <span class="icon">
-                                        <i class="fab fa-github"></i>
-                                    </span>
-                                    <span>Download</span>
-                                </a>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled">Disabled</a>
+                        </li>
+                    </ul>
 
-        <!-- Hero content: will be in the middle -->
-        <div class="hero-body">
-            <div class="container has-text-centered">
-                <h1 class="title is-size-1">
-                    Ascendia
-                </h1>
-                <p class="subtitle">
-                    Unleash Your Creativity with Ascendia: A Versatile WordPress Theme for Every Project
-                </p>
-                <div class="is-flex is-justify-content-center">
-                    <?php get_search_form() ?>
+                    <div>
+                        <?php get_search_form() ?>
+                    </div>
+
                 </div>
             </div>
-        </div>
+        </nav>
     </header>
 
 
