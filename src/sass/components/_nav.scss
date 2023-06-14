@@ -1,0 +1,80 @@
+$menu-item-padding: 10px 20px;
+$sub-menu-padding: 20px;
+$main-color: #333;
+$hover-color: #000;
+$sub-menu-bg: #f8f8f8;
+$sub-menu-heading-color: #555;
+ul {
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  // Add any other common styling you want for the menu
+}
+
+.menu-item {
+  position: relative;
+  // Add styling for individual menu items
+}
+
+.sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: $sub-menu-padding;
+  background-color: $sub-menu-bg;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  // Add styling for the sub-menu container
+}
+
+.menu-item-has-children:hover > .sub-menu {
+  display: block;
+  // Add styling for the sub-menu on hover
+}
+
+.sub-menu .sub-menu {
+  left: 100%;
+  top: 0;
+  // Add indent for sub-menus
+}
+
+.menu-item > a {
+  display: block;
+  padding: $menu-item-padding;
+  color: $main-color;
+  text-decoration: none;
+  // Add styling for menu item links
+}
+
+.menu-item > a:hover {
+  color: $hover-color;
+  // Add hover effect for menu item links
+}
+
+.sub-menu-heading {
+  font-weight: bold;
+  padding: $menu-item-padding;
+  // Add styling for sub-menu headings
+}
+
+.sub-menu li {
+  margin-bottom: 10px;
+  // Add styling for individual items within the sub-menu
+}
+
+.sub-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.sub-menu li a {
+  color: $sub-menu-heading-color;
+  text-decoration: none;
+  // Add styling for sub-menu links
+}
+
+.sub-menu li a:hover {
+  color: $hover-color;
+  // Add hover effect for sub-menu links
+}

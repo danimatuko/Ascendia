@@ -9,7 +9,7 @@ const browserSync = require("browser-sync").create();
 // Compile Sass
 gulp.task("sass", () => {
   return gulp
-    .src("src/scss/**/*.scss")
+    .src("src/sass/**/*.scss")
     .pipe(sass({ outputStyle: "compressed" }).on("error", sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest("dist/css"))
@@ -32,7 +32,7 @@ gulp.task("watch", () => {
     proxy: "http://ascendia.local/", // Replace with your local WordPress URL
   });
 
-  gulp.watch("src/scss/**/*.scss", gulp.series("sass"));
+  gulp.watch("src/sass/**/*.scss", gulp.series("sass"));
   gulp.watch("src/js/**/*.js", gulp.series("scripts"));
   gulp.watch("**/*.php").on("change", browserSync.reload);
 });
