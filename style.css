@@ -8,56 +8,9 @@
  Description: This theme, like WordPress, is licensed under the GPL. 
  Use it to make something cool, have fun, and share what you've learned with others.
  */
-/* Mega Menu Styles */
-.mega-menu-item {
-  position: relative;
-}
 
-.mega-menu-item .sub-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  display: none;
-  z-index: 999;
-  background-color: #ffffff;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.mega-menu-item:hover .sub-menu {
-  display: block;
-}
-
-.mega-menu-item.has-sub-menu > a::after {
-  content: "\25BC";
-  margin-left: 5px;
-}
-
-.mega-menu-item.current-menu-item > a,
-.mega-menu-item.current-menu-ancestor > a,
-.mega-menu-item.current-menu-parent > a {
-  font-weight: bold;
-}
-
-/* Mega Menu Column Styles */
-.sub-menu .mega-menu-column {
-  display: inline-block;
-  vertical-align: top;
-  width: 200px;
-  padding: 10px;
-  margin-right: 20px;
-}
-
-/* Mega Menu Widget Styles */
-.mega-menu-widget {
-  margin-bottom: 20px;
-}
-
-.mega-menu-widget-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.mega-menu-widget-content {
-  margin-bottom: 10px;
+html,
+body {
+  height: 100% !important;
+  background-color: antiquewhite;
 }

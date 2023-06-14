@@ -7,3 +7,4 @@ require 'lib/filters.php';
 
 require 'NavWalker.php';
 require 'lib/navigation.php';
+require 'lib/customizer.php';

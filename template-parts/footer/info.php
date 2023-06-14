@@ -1,4 +1,9 @@
-<p class="has-text-centered has-text-light has-background-black	py-3 mt-5">
-    &copy; <?php echo date('Y'); ?> My Theme.
-    All rights reserved.
+<?php
+
+$site_info = get_theme_mod('ascendia_site_info');
+if (!$site_info) return;
+
+?>
+<p class="text-light py-3 mt-5">
+    <?php echo esc_html($site_info); ?>
 </p>
