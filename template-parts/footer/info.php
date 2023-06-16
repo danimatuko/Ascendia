@@ -6,7 +6,7 @@ if (!$site_info) return;
 ?>
 
 
-<p class="text-light py-3 mt-5">
+<p class="site-info text-light py-3 mt-5">
     <?php
     // data is secured by the customizer(ascendia_customize_register)
     echo ($site_info);

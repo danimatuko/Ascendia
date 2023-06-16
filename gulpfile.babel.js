@@ -19,8 +19,17 @@ gulp.task("sass", () => {
 // Concatenate and minify JS
 gulp.task("scripts", () => {
   return gulp
-    .src("src/js/**/*.js")
+    .src(["src/js/**/*.js", "!src/js/customizer-preview.js"])
     .pipe(concat("main.js"))
+    .pipe(uglify())
+    .pipe(gulp.dest("dist/js"))
+    .pipe(browserSync.stream());
+});
+
+// copy excluded files to the dest/js
+gulp.task("copyExcluded", () => {
+  return gulp
+    .src("src/js/customizer-preview.js")
     .pipe(uglify())
     .pipe(gulp.dest("dist/js"))
     .pipe(browserSync.stream());
@@ -34,8 +43,9 @@ gulp.task("watch", () => {
 
   gulp.watch("src/sass/**/*.scss", gulp.series("sass"));
   gulp.watch("src/js/**/*.js", gulp.series("scripts"));
+  gulp.watch("src/js/**/*.js", gulp.series("copyExcluded"));
   gulp.watch("**/*.php").on("change", browserSync.reload);
 });
 
 // Default task
-gulp.task("default", gulp.parallel("sass", "scripts", "watch"));
+gulp.task("default", gulp.parallel("sass", "scripts", "copyExcluded", "watch"));

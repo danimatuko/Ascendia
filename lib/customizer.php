@@ -15,6 +15,7 @@ function ascendia_customize_register($wp_customize) {
     $wp_customize->add_setting('ascendia_site_info', array(
         'default' => 'Ascendia theme, All rights reserved.',
         'sanitize_callback' => 'sanitize_html_except_links',
+        'transport' => 'postMessage'
     ));
 
     // Add a control for site info

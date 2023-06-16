@@ -30,3 +30,20 @@ function ascendia_enqueue_scripts() {
 }
 
 add_action('wp_enqueue_scripts', 'ascendia_enqueue_scripts');
+
+
+/**
+ * Enqueue script for live preview updates
+ */
+function ascendia_customizer_preview() {
+    wp_enqueue_script(
+        'customizer_preview',
+        get_template_directory_uri() . '/dist/js/customize-preview.js',
+        array('customize-preview', 'jquery'),
+        '1.0',
+        true
+
+    );
+}
+
+add_action('customize_preview_init', 'ascendia_customizer_preview');
