@@ -75,6 +75,21 @@ function ascendia_customize_register($wp_customize) {
             get_footer();
         }
     ));
+
+
+
+    $wp_customize->add_setting('ascendia_footer_layout', array(
+        'default' => '3,3,3,3',
+        'transport' => 'postMessage',
+        'sanitize_callback' => 'sanitize_text_field',
+        'validate_callback' => 'ascendia_validate_footer_layout'
+    ));
+
+    $wp_customize->add_control('ascendia_footer_layout', array(
+        'label' => 'Footer Layout',
+        'type' => 'text',
+        'section' => 'ascendia_footer_options',
+    ));
 }
 
 add_action('customize_register', 'ascendia_customize_register');
@@ -116,4 +131,13 @@ function ascendia_sanitize_footer_background($input) {
         return $input;
     }
     return 'dark';
+}
+
+
+
+function ascendia_validate_footer_layout($validity, $value) {
+    if (!preg_match('/^([1-9]|1[012])(,([1-9]|1[012]))*$/', $value)) {
+        $validity->add('invalid_footer_layout', esc_html('Footer Layour is invalid'));
+    }
+    return $validity;
 }

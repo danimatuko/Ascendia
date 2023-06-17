@@ -6,7 +6,8 @@
  * @return void
  */
 function ascendia_register_footer_widgets() {
-    $footer_layout = "3,3,3,3";
+    $footer_layout = get_theme_mod('ascendia_footer_layout', '3,3,3,3');
+    $footer_layout = preg_replace('/\s+/', '', $footer_layout);
     $columns = array_map('intval', explode(",", $footer_layout));
     $footer_bg = "dark";
 
