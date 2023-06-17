@@ -4,6 +4,27 @@
  * Add theme options
  */
 function ascendia_customize_register($wp_customize) {
+    $wp_customize->get_setting('blogname')->transport = 'postMessage';
+
+    $wp_customize->selective_refresh->add_partial("blogname", array(
+        'selector' => '.navbar-brand',
+        'container_inclusive' => false,
+        'render_callback' => function () {
+            bloginfo('name');
+        }
+    ));
+
+    $wp_customize->selective_refresh->add_partial("footer-site-info", array(
+        'settings' => array('ascendia_site_info'),
+        'selector' => '.site-info ',
+        'container_inclusive' => true,
+        'render_callback' => function () {
+            get_template_part("template-parts/footer/info");
+        }
+    ));
+
+
+
     // Add a new section for theme options
     $wp_customize->add_section('ascendia_footer_options', array(
         'title' => 'Footer Options',
@@ -23,6 +44,36 @@ function ascendia_customize_register($wp_customize) {
         'label' => 'Site Info',
         'type' => 'text',
         'section' => 'ascendia_footer_options',
+    ));
+
+
+
+    $wp_customize->add_setting('ascendia_footer_background', array(
+        'default' => 'dark',
+        'sanitize_callback' => 'ascendia_sanitize_footer_background',
+        'transport' => 'postMessage'
+    ));
+
+
+    // Add a control for footer bg
+    $wp_customize->add_control('ascendia_footer_background', array(
+        'type' => 'select',
+        'label' => 'Footer Background',
+        'choices' => array(
+            'light' => esc_html__('Light'),
+            'dark' => esc_html__('Dark'),
+        ),
+        'section' => 'ascendia_footer_options',
+    ));
+
+
+    $wp_customize->selective_refresh->add_partial("footer", array(
+        'settings' => array('ascendia_footer_background'),
+        'selector' => '#footer',
+        'container_inclusive' => false,
+        'render_callback' => function () {
+            get_footer();
+        }
     ));
 }
 
@@ -52,4 +103,17 @@ function sanitize_html_except_links($html) {
     $sanitized_html = wp_kses($html, $allowed_tags);
 
     return $sanitized_html;
+}
+
+
+
+
+function ascendia_sanitize_footer_background($input) {
+
+    $valid = array('light', 'dark', true);
+
+    if (in_array($input, $valid)) {
+        return $input;
+    }
+    return 'dark';
 }
