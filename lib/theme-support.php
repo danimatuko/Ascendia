@@ -16,10 +16,9 @@ function ascendia_theme_support() {
 
     // Add support for custom logos
     add_theme_support('custom-logo', array(
-        'height'      => 100,
-        'width'       => 400,
-        'flex-width'  => true,
-        'flex-height' => true,
+        'height'      => 50,
+        'width'       => 100,
+
     ));
 
     // Add support for featured images
