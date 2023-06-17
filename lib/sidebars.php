@@ -36,9 +36,9 @@ function ascendia_register_primary_sidebar() {
         'name'          => __('Primary Sidebar', 'ascendia'),
         'id'            => 'primary-sidebar',
         'description'   => __('This primary sidebar appears in the blog page', 'ascendia'),
-        'before_widget' => '<section id="%1$s" class="widget %2$s mb-5">',
+        'before_widget' => '<section id="%1$s" class="widget %2$s mb-5 fs-5">',
         'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="font-monospace h4 mb-3 text-third">',
+        'before_title'  => '<h2 class="font-monospace h3 mb-3 text-complement">',
         'after_title'   => '</h2>',
     );
 
