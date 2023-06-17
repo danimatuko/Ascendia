@@ -1,9 +1,9 @@
 $menu-item-padding: 10px 20px;
 $sub-menu-padding: 20px;
-$main-color: #333;
-$hover-color: #000;
-$sub-menu-bg: #f8f8f8;
-$sub-menu-heading-color: #555;
+$main-color: $primary;
+$hover-color: $secondary;
+$sub-menu-bg: $light;
+$sub-menu-heading-color: $dark;
 
 ul {
   list-style: none;

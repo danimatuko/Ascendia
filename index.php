@@ -1,7 +1,7 @@
 <?php get_header() ?>
 
 <div class="container py-5">
-    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-secondary bg-opacity-25">
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-secondary">
         <div class="col-xl-6 px-0">
             <h1 class="display-4 fst-italic">Title of a longer featured blog post</h1>
             <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
@@ -14,9 +14,9 @@
             <?php get_template_part('template-parts/loop') ?>
         </section>
         <?php if (is_active_sidebar('primary-sidebar')) : ?>
-            <div class="col-3">
-                <?php get_sidebar() ?>
-            </div>
+        <div class="col-3">
+            <?php get_sidebar() ?>
+        </div>
         <?php endif ?>
     </div>
 </div>

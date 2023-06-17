@@ -11,7 +11,7 @@
 <body <?php body_class(); ?>>
 
     <header class="">
-        <nav class="navbar navbar-expand-lg bg-light">
+        <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="#">
                     <?php if (has_custom_logo()) {
