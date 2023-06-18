@@ -6,6 +6,7 @@ $footer_bg = get_theme_mod('ascendia_footer_background', 'dark');
 $text_color = $footer_bg == 'dark' ? 'light' : 'dark';
 
 if (!$site_info) return;
+
 ?>
 
 

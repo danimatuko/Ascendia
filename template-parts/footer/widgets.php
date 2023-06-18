@@ -12,12 +12,12 @@
 
             <?php foreach ($columns as $i => $column) : ?>
 
-            <?php if (is_active_sidebar('footer-widget-' . $i + 1)) : ?>
-            <section id="sidebar" class="widget-area col">
-                <?php dynamic_sidebar('footer-widget-' . $i + 1); ?>
-            </section>
+                <?php if (is_active_sidebar('footer-widget-' . $i + 1)) : ?>
+                    <section id="sidebar" class="widget-area col">
+                        <?php dynamic_sidebar('footer-widget-' . $i + 1); ?>
+                    </section>
 
-            <?php endif; ?>
+                <?php endif; ?>
 
             <?php endforeach; ?>
 

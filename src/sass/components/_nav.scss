@@ -1,81 +1,72 @@
-$menu-item-padding: 10px 20px;
-$sub-menu-padding: 20px;
-$main-color: $primary;
-$hover-color: $secondary;
-$sub-menu-bg: $light;
-$sub-menu-heading-color: $dark;
+// Variables
+$navbar-bg-color: #f8f9fa;
+$navbar-text-color: #333;
+$navbar-link-color: #333;
+$navbar-link-hover-color: #555;
 
-ul {
-  list-style: none;
-}
+// Navbar
+.navbar {
+  background-color: $navbar-bg-color;
+  color: $navbar-text-color;
+  padding: 1rem;
 
-.menu {
-  display: flex;
-  // Add any other common styling you want for the menu
-}
+  .navbar-brand {
+    color: $navbar-link-color;
+    font-weight: bold;
+    text-decoration: none;
+  }
 
-.menu-item {
-  position: relative;
-  // Add styling for individual menu items
-}
+  .navbar-toggler {
+    border: none;
+    color: $navbar-text-color;
+    background-color: transparent;
 
-.sub-menu {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  padding: $sub-menu-padding;
-  background-color: $sub-menu-bg;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  // Add styling for the sub-menu container
-}
+    .navbar-toggler-icon {
+      background-image: url("path/to/toggler-icon.png");
+      // Add custom styles for the toggler icon here
+    }
+  }
 
-.menu-item-has-children:hover > .sub-menu {
-  display: block;
-  // Add styling for the sub-menu on hover
-}
+  .navbar-collapse {
+    justify-content: flex-end;
 
-.sub-menu .sub-menu {
-  left: 100%;
-  top: 0;
-  // Add indent for sub-menus
-}
+    ul.navbar-nav {
+      li.nav-item {
+        .nav-link {
+          color: $navbar-link-color;
+          text-decoration: none;
+          padding: 0.5rem 1rem;
 
-.menu-item > a {
-  display: block;
-  padding: $menu-item-padding;
-  color: $main-color;
-  text-decoration: none;
-  // Add styling for menu item links
-}
+          &:hover {
+            color: $navbar-link-hover-color;
+            // Add additional hover styles here
+          }
+        }
+      }
+    }
+  }
 
-.menu-item > a:hover {
-  color: $hover-color;
-  // Add hover effect for menu item links
-}
+  form {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
 
-.sub-menu-heading {
-  font-weight: bold;
-  padding: $menu-item-padding;
-  // Add styling for sub-menu headings
-}
+    input[type="text"] {
+      border: 1px solid $navbar-link-color;
+      padding: 0.25rem;
+    }
 
-.sub-menu li {
-  margin-bottom: 10px;
-  // Add styling for individual items within the sub-menu
-}
+    button[type="submit"] {
+      background-color: $navbar-link-color;
+      color: $navbar-bg-color;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      margin-left: 0.25rem;
 
-.sub-menu li:last-child {
-  margin-bottom: 0;
-}
-
-.sub-menu li a {
-  color: $sub-menu-heading-color;
-  text-decoration: none;
-  // Add styling for sub-menu links
-}
-
-.sub-menu li a:hover {
-  color: $hover-color;
-  // Add hover effect for sub-menu links
+      &:hover {
+        background-color: $navbar-link-hover-color;
+        // Add additional hover styles here
+      }
+    }
+  }
 }
