@@ -16,6 +16,7 @@
         </div>
 
         <?php ascendia_read_more_link() ?>
+        <?php ascendia_delete_post() ?>
     </div>
 </article>
 

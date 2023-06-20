@@ -36,3 +36,28 @@ function ascendia_read_more_link() {
         </a>
     READ_MORE;
 }
+
+
+
+/**
+ * Display the Delete post button.
+ *
+ * @return void
+ */
+function ascendia_delete_post() {
+    $URL = add_query_arg([
+        'action' => 'ascendia_delete_post',
+        'post' => get_the_ID()
+    ], home_url());
+
+    $title = esc_attr(get_the_title());
+
+    if (!current_user_can('delete_post', get_the_ID())) return;
+
+    echo
+    <<<DELETE_POST
+        <a href="$URL" class='card-link text-danger'>
+            Delete Post <span class="visually-hidden">about $title</span>
+        </a>
+    DELETE_POST;
+}
