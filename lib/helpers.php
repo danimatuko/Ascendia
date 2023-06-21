@@ -48,7 +48,7 @@ function ascendia_delete_post() {
     $URL = add_query_arg([
         'action' => 'ascendia_delete_post',
         'post' => get_the_ID(),
-        'nonce' => wp_create_nonce('ascendia_delete_post' . get_the_ID())
+        'nonce' => wp_create_nonce('ascendia_delete_post_' . get_the_ID())
     ], home_url());
 
     $title = esc_attr(get_the_title());

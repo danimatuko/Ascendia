@@ -1,6 +1,3 @@
-<?php if (have_posts()) : ?>
-<?php while (have_posts()) : the_post(); ?>
-
 <article <?php post_class("card mb-4 shadow border-dark"); ?>>
     <div class="card-body">
         <h2 class="card-title font-monospace">
@@ -17,13 +14,6 @@
 
         <?php ascendia_read_more_link() ?>
         <?php ascendia_delete_post() ?>
+        <?php echo '<pre>', var_dump(get_post_meta(get_the_ID(), 'price', true)), '</pre>'; ?>
     </div>
 </article>
-
-<?php endwhile; ?>
-
-<?php the_posts_pagination() ?>
-
-<?php else : ?>
-<p>No posts found.</p>
-<?php endif; ?>

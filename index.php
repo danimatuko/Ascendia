@@ -11,7 +11,7 @@
     </div>
     <div class="row justify-content-between">
         <section class="<?php echo (is_active_sidebar('primary-sidebar')) ? "col-lg-6" : "col"  ?>">
-            <?php get_template_part('template-parts/loop') ?>
+            <?php get_template_part('loop') ?>
         </section>
         <?php if (is_active_sidebar('primary-sidebar')) : ?>
             <div class="col-4">
