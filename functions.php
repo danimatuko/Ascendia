@@ -12,8 +12,13 @@ require 'lib/theme-support.php';
 
 function ascendia_on_post_delete() {
     if (isset($_GET['action']) && $_GET['action'] === 'ascendia_delete_post') {
+        if (!isset($_GET['nonce']) || !wp_verify_nonce($_GET['nonce'], 'ascendia_delete_post_' . $_GET['post'])) {
+            return;
+        }
+
         $post_id = isset($_GET['post']) ? $_GET['post'] : null;
         $post = get_post((int)$post_id);
+
         if (empty($post)) {
             return;
         }
