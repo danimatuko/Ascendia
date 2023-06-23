@@ -9,6 +9,7 @@ require 'lib/filters.php';
 require 'Bootstrap_5_Nav_walker.php';
 require 'lib/navigation.php';
 require 'lib/theme-support.php';
+require 'lib/metaboxes.php';
 
 function ascendia_on_post_delete() {
     if (isset($_GET['action']) && $_GET['action'] === 'ascendia_delete_post') {
