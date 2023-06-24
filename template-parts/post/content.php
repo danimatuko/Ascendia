@@ -14,6 +14,5 @@
 
         <?php ascendia_read_more_link() ?>
         <?php ascendia_delete_post() ?>
-        <?php echo '<pre>', var_dump(get_post_meta(get_the_ID(), 'price', false)), '</pre>'; ?>
     </div>
 </article>

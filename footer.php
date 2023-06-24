@@ -1,11 +1,23 @@
 <?php
 
+/**
+ * The template for displaying the footer
+ *
+ * Contains the closing of the #content div and all content after.
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package ascendia
+ */
+
+
+
 $footer_bg = get_theme_mod('ascendia_footer_background', 'dark');
+
 ?>
 
 
 
-</main>
 
 <footer>
     <?php get_template_part("template-parts/footer/widgets") ?>

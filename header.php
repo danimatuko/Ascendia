@@ -1,3 +1,17 @@
+<?php
+
+/**
+ * The header for our theme
+ *
+ * This is the template that displays all of the <head> section and everything up until <div id="content">
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
+ *
+ * @package ascendia
+ */
+
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 
@@ -13,9 +27,7 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <button class="navbar-toggler border" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false"
-                    aria-label="Toggle navigation">
+                <button class="navbar-toggler border" type="button" data-bs-toggle="collapse" data-bs-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon display-5">&#8801;</span>
                 </button>
                 <a class="navbar-brand" href="#">
@@ -45,9 +57,3 @@
             </div>
         </nav>
     </header>
-
-
-
-
-
-    <main class="section">

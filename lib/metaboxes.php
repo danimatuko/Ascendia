@@ -9,10 +9,11 @@
 function ascendia_render_post_meta_box_html($post) {
     $subtitle = get_post_meta($post->ID, '__ascendia_post_subtitle', true);
 ?>
-    <div>
-        <label for="ascendia_post_subtitle"><?php esc_html_e('Post Subtitle'); ?></label>
-        <input type="text" id="ascendia_post_subtitle" name="ascendia_post_subtitle_field" class="widefat" value="<?php echo esc_attr($subtitle); ?>">
-    </div>
+<div>
+    <label for="ascendia_post_subtitle"><?php esc_html_e('Post Subtitle'); ?></label>
+    <input type="text" id="ascendia_post_subtitle" name="ascendia_post_subtitle_field" class="widefat"
+        value="<?php echo esc_attr($subtitle); ?>">
+</div>
 <?php
 }
 
